@@ -1,0 +1,37 @@
+/* I style the toplevel div in the SignInComponent */
+#topSignInDiv {
+  display: flex;
+  align-items: center;
+}
+
+/* I style the div where my form will lie. I assign it a margin where the browser selects a suitable margin to use. */
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+/* I use a descendant selector to assign a font-weight to the text in the input fields and the checkbox label */
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+/*I use a descendant selector to assign to zoom back and minimize the placeholder of the input fields when they are focused into. */
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+/* I use a descendant selector to assign styles to the email input field. */
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* I use a descendant selector to assign styles to the password input field. */
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
