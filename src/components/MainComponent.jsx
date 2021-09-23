@@ -16,12 +16,19 @@ import {Switch, Route } from "react-router-dom";
 I then destructured the setSignedIn prop passed from the file App.js */
 const MainComponent = ({ setSignedIn }) => {
 
-  // const [userDetails, setUserDetails] = useState(JSON.parse(localStorage.getItem("userDetails")));
-  // console.log(`😜`, userDetails);
+  // const [liftedUserDetails, setLiftedUserDetails] = useState();
+
+  const [localDbUserDetails, setLocalDbUserDetails] = useState({});
+  console.log(`😜 22`, localDbUserDetails);
+  console.log(`😜 22`, typeof(localDbUserDetails));
+  
+  const liftingUpUserDetailsHandler = () => {
+    setLocalDbUserDetails(JSON.parse(localStorage.getItem("userDetails")));
+  };
 
   // useEffect(() => {
-  //   setUserDetails(JSON.parse(localStorage.getItem("userDetails")))
-  // }, [userDetails])
+  //   setLocalDbUserDetails(localStorage.getItem("userDetails"));
+  // }, [liftedUserDetails]);
 
   return(
     <>
@@ -29,17 +36,17 @@ const MainComponent = ({ setSignedIn }) => {
         {/* I then configured routing to the Landing page, Sign In Page and the three product pages.
         I learnt to pass props in routed components from: https://github.com/remix-run/react-router/issues/4105#issuecomment-291834881 . */}
         <Switch>
-          <Route path="/signin" exact render={() => <SignInComponent  setSignedIn={setSignedIn} />} />
+          <Route path="/signin" exact render={() => <SignInComponent  setSignedIn={setSignedIn} liftingUpUserDetailsHandlerProp={liftingUpUserDetailsHandler} />} />
           <Route path="/" exact render={() => <LandingPageComponent />} />
           <Route path="/turkishpumpkinlamps" exact render={() => <TurkishPumpkinLampsComponent />} />
           <Route path="/elephantcurvings" exact render={() => <ElephantCurvingsComponent />} />
           <Route path="/chesspieces" exact render={() => <ChessPiecesComponent />} />
           {/* https://stackoverflow.com/a/48497783/9497346 */}
           { 
-            userDetails !== null && <Route path="/account/profile" exact render={() => <ViewAccountDetailsComponent />} />    
+            localDbUserDetails && Object.keys(localDbUserDetails).length > 0 && <Route path="/account/profile" exact render={() => <ViewAccountDetailsComponent />} />    
           }
           { 
-            userDetails !== null && <Route path="/account/edit" exact render={() => <EditAccountDetailsComponent />} />
+            localDbUserDetails && Object.keys(localDbUserDetails).length > 0 && <Route path="/account/edit" exact render={() => <EditAccountDetailsComponent />} />
           }
         </Switch>
       </main>
