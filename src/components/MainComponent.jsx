@@ -16,19 +16,12 @@ import {Switch, Route } from "react-router-dom";
 I then destructured the setSignedIn prop passed from the file App.js */
 const MainComponent = ({ setSignedIn }) => {
 
-  // const [liftedUserDetails, setLiftedUserDetails] = useState();
-
-  const [localDbUserDetails, setLocalDbUserDetails] = useState({});
-  console.log(`😜 22`, localDbUserDetails);
-  console.log(`😜 22`, typeof(localDbUserDetails));
-  
-  const liftingUpUserDetailsHandler = () => {
-    setLocalDbUserDetails(JSON.parse(localStorage.getItem("userDetails")));
-  };
+  // const [userDetails, setUserDetails] = useState(JSON.parse(localStorage.getItem("userDetails")));
+  // console.log(`😜`, userDetails);
 
   // useEffect(() => {
-  //   setLocalDbUserDetails(localStorage.getItem("userDetails"));
-  // }, [liftedUserDetails]);
+  //   setUserDetails(JSON.parse(localStorage.getItem("userDetails")))
+  // }, [userDetails])
 
   return(
     <>
@@ -43,10 +36,10 @@ const MainComponent = ({ setSignedIn }) => {
           <Route path="/chesspieces" exact render={() => <ChessPiecesComponent />} />
           {/* https://stackoverflow.com/a/48497783/9497346 */}
           { 
-            localDbUserDetails && Object.keys(localDbUserDetails).length > 0 && <Route path="/account/profile" exact render={() => <ViewAccountDetailsComponent />} />    
+            userDetails !== null && <Route path="/account/profile" exact render={() => <ViewAccountDetailsComponent />} />    
           }
           { 
-            localDbUserDetails && Object.keys(localDbUserDetails).length > 0 && <Route path="/account/edit" exact render={() => <EditAccountDetailsComponent />} />
+            userDetails !== null && <Route path="/account/edit" exact render={() => <EditAccountDetailsComponent />} />
           }
         </Switch>
       </main>

@@ -23,6 +23,7 @@ const SignInComponent = ({ setSignedIn, liftingUpUserDetailsHandlerProp }) => {
     setSignedIn(true);
     setUserDetails(data);
     console.log(data);
+    localStorage.setItem("userDetails", JSON.stringify(data));
     history.push("/")
   };
 
