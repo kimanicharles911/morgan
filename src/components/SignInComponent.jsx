@@ -19,6 +19,7 @@ const SignInComponent = ({ setSignedIn }) => {
   const onSubmit = (data) => {
     setSignedIn(true);
     console.log(data);
+    localStorage.setItem("signInData", JSON.stringify(data));
     history.push("/")
   };
 

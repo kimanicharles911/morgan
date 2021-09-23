@@ -10,12 +10,13 @@ import { BrowserRouter as Router} from "react-router-dom";
 I declared a state variable called signedIn to pass the status of whther a user has signed in to the navbar component. Its default value is false.  */
 const App = () => {
   const [signedIn, setSignedIn] = useState(false);
+  localStorage.removeItem("signInData");
 
   return (
     /* I wrapped all the components that I want to have the react-router functionality with the Router component.
     Meaning even the child components of this components will have the react-router functionality. */
     <Router>
-      <HeaderComponent signedIn={signedIn} />
+      <HeaderComponent signedIn={signedIn} setSignedIn={setSignedIn} />
       <MainComponent setSignedIn={setSignedIn} />
     </Router>
   );
