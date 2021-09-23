@@ -60,8 +60,11 @@ const NavbarComponent = ({ signedIn, setSignedIn }) => {
                     : <li className="d-grid flex-shrink-0" style={{gridTemplateColumns: "1fr 2fr"}}>
                         {/* I obtained the below profile avatar image from: https://avatars.githubusercontent.com/u/7065836?v=4 */}
                         <NavDropdown title={<img src={githubAvatar} alt="mdo" width="32" height="32" className="rounded-circle" />} >
-                          <LinkContainer to="/" onClick={() => setExpanded(false)}>
-                            <Nav.Link href="/"><NavDropdown.Item href="#">Your Profile</NavDropdown.Item></Nav.Link>
+                          <LinkContainer to="/account/profile/" onClick={() => setExpanded(false)}>
+                            <Nav.Link href="/account/profile/"><NavDropdown.Item href="/account/profile/">Your Profile</NavDropdown.Item></Nav.Link>
+                          </LinkContainer>
+                          <LinkContainer to="/account/edit/" onClick={() => setExpanded(false)}>
+                            <Nav.Link href="/account/edit/"><NavDropdown.Item href="/account/edit/">Edit Profile</NavDropdown.Item></Nav.Link>
                           </LinkContainer>
                           <LinkContainer to="/" onClick={() => setExpanded(false)}>
                             <Nav.Link href="/"><NavDropdown.Item href="#">Home</NavDropdown.Item></Nav.Link>
@@ -70,7 +73,7 @@ const NavbarComponent = ({ signedIn, setSignedIn }) => {
                             <Nav.Link href="/"><NavDropdown.Item href="#">Shop</NavDropdown.Item></Nav.Link>
                           </LinkContainer>
                           {/* I learn to use two inline functions from: https://stackoverflow.com/a/26069299/9497346 */}
-                          <LinkContainer to="/" onClick={() => { setExpanded(false); setSignedIn(false); localStorage.removeItem("signInData"); }}>
+                          <LinkContainer to="/" onClick={() => { setExpanded(false); setSignedIn(false); localStorage.removeItem("userDetails"); }}>
                             <Nav.Link href="/"><NavDropdown.Item href="#">Sign Out</NavDropdown.Item></Nav.Link>
                           </LinkContainer>
                         </NavDropdown>
