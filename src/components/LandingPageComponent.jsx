@@ -27,7 +27,7 @@ const LandingPageComponent = () => {
             <img src={royalOntarioArt} alt="slider image 1" className="d-block w-100" />
             <div className="container">
               <div className="carousel-caption text-start">
-                <h1 className="carouselDescription rounded">Acme provides customized Art for it's clients✨</h1>
+                <h1 className="carouselDescription rounded">Morgan provides customized Art for it's clients✨</h1>
                 <p className="carouselDescription rounded"></p>
                 <p><a href="#" className="btn btn-lg btn-warning">Order your Idea</a></p>
               </div>
@@ -53,7 +53,7 @@ const LandingPageComponent = () => {
             <img src={turkishPumpkinOrientalLamps} alt="slider image 1" className="d-block w-100" />
             <div className="container">
               <div className="carousel-caption text-end">
-                <h1 className="carouselDescription rounded">Acme brings your Art dreams into a reality.</h1>
+                <h1 className="carouselDescription rounded">Morgan brings your Art dreams into a reality.</h1>
                 <p className="carouselDescription rounded"></p>
                 <p><a href="#" className="btn btn-lg btn-warning">Order your Idea</a></p>
               </div>

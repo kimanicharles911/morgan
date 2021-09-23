@@ -27,51 +27,69 @@ const NavbarComponent = ({ signedIn }) => {
         {/* I obtained the below Logo image from: https://unsplash.com/photos/kgd43BJGyGc */}
         {/* The LinkContainer component from the react-router-bootstrap library is used to make links that don't send external http requests but that use the react-dom to manipulate the page and its link. */}
         <LinkContainer to="/">
-          <Nav.Link><img src={acmeLogo} alt="Acme logo" className="img-fluid" width={50 + "px"} height={30 + "px"}/></Nav.Link>
+          <Nav.Link><img src={acmeLogo} alt="Morgan logo" className="img-fluid" width={50 + "px"} height={30 + "px"}/></Nav.Link>
         </LinkContainer>
         <LinkContainer to="/">
-          <Nav.Link><Navbar.Brand href="#">Acme</Navbar.Brand></Nav.Link>
+          <Nav.Link><Navbar.Brand href="#">Morgan</Navbar.Brand></Nav.Link>
         </LinkContainer>
         {/* The react-bootstrap navbar toggle is where the functionality of collapsing or expanding the navbar is usually toggled from, hence I set an onClick eventListener here to change the menu visiblity status from false to true.  */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
 
-        <Navbar.Collapse id="bnavbarsExample03">
+        <Navbar.Collapse id="navbarsExample03">
           <Container>
             <Row>
-              <Nav className="me-auto">
-                {/* I add an onclick event listener that collapses the mobile navbar whenever a navbar item is clicked. It sets the expanded hook to false */}
-                <LinkContainer to="/" onClick={() => setExpanded(false)}>
-                  <Nav.Link href="#">Location</Nav.Link>
-                </LinkContainer>
-                <NavDropdown title="Products" id="basic-nav-dropdown">
+              <Nav>
+                <ul className="navbar-nav me-auto mb-2 mb-sm-0">           
+                </ul>
+                <ul className="d-flex navbar-nav me-2 mb-2 mb-sm-0">
+                  {/* I add an onclick event listener that collapses the mobile navbar whenever a navbar item is clicked. It sets the expanded hook to false */}  
+                  <LinkContainer to="/" onClick={() => setExpanded(false)}>
+                    <Nav.Link href="#">Location</Nav.Link>
+                  </LinkContainer>
+                  <NavDropdown title="Products" id="basic-nav-dropdown">
+                    {/* I add an onclick event listener that collapses the mobile navbar whenever a navbar item is clicked. It sets the expanded hook to false */}
+                    <LinkContainer to="/elephantcurvings" onClick={() => setExpanded(false)}>
+                      <Nav.Link href="/elephantcurvings"><NavDropdown.Item href="/elephantcurvings">Elephant Curvings</NavDropdown.Item></Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/chesspieces" onClick={() => setExpanded(false)}>
+                      <Nav.Link href="/chesspieces"><NavDropdown.Item href="/chesspieces">Chess Pieces</NavDropdown.Item></Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/turkishpumpkinlamps" onClick={() => setExpanded(false)}>
+                      <Nav.Link href="/turkishpumpkinlamps"><NavDropdown.Item href="/turkishpumpkinlamps">Turkish Pumpkin Lamps</NavDropdown.Item></Nav.Link>
+                    </LinkContainer>
+                  </NavDropdown>
                   {/* I add an onclick event listener that collapses the mobile navbar whenever a navbar item is clicked. It sets the expanded hook to false */}
-                  <LinkContainer to="/elephantcurvings" onClick={() => setExpanded(false)}>
-                    <Nav.Link href="/elephantcurvings"><NavDropdown.Item href="/elephantcurvings">Elephant Curvings</NavDropdown.Item></Nav.Link>
+                  <LinkContainer to="/" onClick={() => setExpanded(false)}>
+                    <Nav.Link href="#">About Us</Nav.Link>
                   </LinkContainer>
-                  <LinkContainer to="/chesspieces" onClick={() => setExpanded(false)}>
-                    <Nav.Link href="/chesspieces"><NavDropdown.Item href="/chesspieces">Chess Pieces</NavDropdown.Item></Nav.Link>
+                  <LinkContainer to="/" onClick={() => setExpanded(false)}>
+                    <Nav.Link href="#">Privacy & Legal</Nav.Link>
                   </LinkContainer>
-                  <LinkContainer to="/turkishpumpkinlamps" onClick={() => setExpanded(false)}>
-                    <Nav.Link href="/turkishpumpkinlamps"><NavDropdown.Item href="/turkishpumpkinlamps">Turkish Pumpkin Lamps</NavDropdown.Item></Nav.Link>
+                  <LinkContainer to="/" onClick={() => setExpanded(false)}>
+                    <Nav.Link href="#">Contact</Nav.Link>
                   </LinkContainer>
-                </NavDropdown>
-                {/* I add an onclick event listener that collapses the mobile navbar whenever a navbar item is clicked. It sets the expanded hook to false */}
-                <LinkContainer to="/" onClick={() => setExpanded(false)}>
-                  <Nav.Link href="#">About Us</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/" onClick={() => setExpanded(false)}>
-                  <Nav.Link href="#">Privacy & Legal</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/" onClick={() => setExpanded(false)}>
-                  <Nav.Link href="#">Contact</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/" onClick={() => setExpanded(false)}>
-                  <Nav.Link href="#">FAQ</Nav.Link>
-                </LinkContainer>
-                {/* I add an onclick event listener that collapses the mobile navbar whenever a navbar item is clicked. It sets the expanded hook to false */}
-                <LinkContainer to="/signin" onClick={() => setExpanded(false)}>
-                  <Button variant={signedIn === false ? "primary": "success"}>{signedIn === false ? "Sign In": "Sign Out"}</Button>
-                </LinkContainer>
+                  <LinkContainer to="/" onClick={() => setExpanded(false)}>
+                    <Nav.Link href="#">FAQ</Nav.Link>
+                  </LinkContainer>
+                  {/* I add an onclick event listener that collapses the mobile navbar whenever a navbar item is clicked. It sets the expanded hook to false */}
+                  <LinkContainer to="/signin" onClick={() => setExpanded(false)}>
+                    <Button variant={signedIn === false ? "primary": "success"}>{signedIn === false ? "Sign In": "Sign Out"}</Button>
+                  </LinkContainer>
+
+                  <li className="d-grid flex-shrink-0" style={{gridTemplateColumns: "1fr 2fr"}}>
+                    <NavDropdown title={<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" className="rounded-circle" />} >
+                      <LinkContainer to="/" onClick={() => setExpanded(false)}>
+                        <Nav.Link href="/"><NavDropdown.Item href="#">Your Profile</NavDropdown.Item></Nav.Link>
+                      </LinkContainer>
+                      <LinkContainer to="/" onClick={() => setExpanded(false)}>
+                        <Nav.Link href="/"><NavDropdown.Item href="#">Home</NavDropdown.Item></Nav.Link>
+                      </LinkContainer>
+                      <LinkContainer to="/" onClick={() => setExpanded(false)}>
+                        <Nav.Link href="/"><NavDropdown.Item href="#">Shop</NavDropdown.Item></Nav.Link>
+                      </LinkContainer>
+                    </NavDropdown>
+                  </li>
+                </ul>
               </Nav>
             </Row>
           </Container>

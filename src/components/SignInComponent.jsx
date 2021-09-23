@@ -29,7 +29,7 @@ const SignInComponent = ({ setSignedIn }) => {
         {/* The handleSubmit useForm hook method calls the onSubmit function.  */}
         <form onSubmit={handleSubmit(onSubmit)}>
           {/*The Logo below was obtained from: https://unsplash.com/photos/kgd43BJGyGc */}
-          <img src={acmeLogo} alt="Acme logo" className="img-fluid mb-4" width={72} height={57}/>   
+          <img src={acmeLogo} alt="Morgan logo" className="img-fluid mb-4" width={72} height={57}/>   
           <h1 className="h3 mb-3 fw-normal">Please Sign in</h1>
 
           <div className="form-floating">
