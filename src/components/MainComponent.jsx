@@ -34,13 +34,8 @@ const MainComponent = ({ setSignedIn }) => {
           <Route path="/turkishpumpkinlamps" exact render={() => <TurkishPumpkinLampsComponent />} />
           <Route path="/elephantcurvings" exact render={() => <ElephantCurvingsComponent />} />
           <Route path="/chesspieces" exact render={() => <ChessPiecesComponent />} />
-          {/* https://stackoverflow.com/a/48497783/9497346 */}
-          { 
-            userDetails !== null && <Route path="/account/profile" exact render={() => <ViewAccountDetailsComponent />} />    
-          }
-          { 
-            userDetails !== null && <Route path="/account/edit" exact render={() => <EditAccountDetailsComponent />} />
-          }
+          <Route path="/account/profile" exact render={() => <ViewAccountDetailsComponent />} />
+          <Route path="/account/edit" exact render={() => <EditAccountDetailsComponent />} />
         </Switch>
       </main>
     </>
