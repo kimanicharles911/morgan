@@ -3,16 +3,13 @@ I imported the useHistory hook from the react-router-dom library. The useHistory
 I then imported the company logo image called acmeLogo, which I obtained from: https://unsplash.com/photos/kgd43BJGyGc .
 I also imported the stylesheet for the SignInComponent.
 */
-import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import {  useHistory } from "react-router-dom";
 import acmeLogo from "../images/acme-logo.jpg";
 import "./SignInComponent.css";
 
 /* I created a react component called SignInComponent . */
-const SignInComponent = ({ setSignedIn, liftingUpUserDetailsHandlerProp }) => {
-
-  const [userDetails, setUserDetails] = useState({});
+const SignInComponent = ({ setSignedIn }) => {
 
   /* I use the useForm hook and its methods for tracking the user input (i.e register), throwing validation errors and handling form submission.
   I also created a variable that stores the useHistory hook that is then called by the onsubmit function to redirect to homepage if the login was successful.  */
@@ -21,16 +18,10 @@ const SignInComponent = ({ setSignedIn, liftingUpUserDetailsHandlerProp }) => {
 
   const onSubmit = (data) => {
     setSignedIn(true);
-    setUserDetails(data);
     console.log(data);
     localStorage.setItem("userDetails", JSON.stringify(data));
     history.push("/")
   };
-
-  useEffect(() => {
-    localStorage.setItem("userDetails", JSON.stringify(userDetails));
-    liftingUpUserDetailsHandlerProp();
-  }, [userDetails])
 
   return(
     /* The sign in form JSX begins here. */

@@ -29,7 +29,7 @@ const MainComponent = ({ setSignedIn }) => {
         {/* I then configured routing to the Landing page, Sign In Page and the three product pages.
         I learnt to pass props in routed components from: https://github.com/remix-run/react-router/issues/4105#issuecomment-291834881 . */}
         <Switch>
-          <Route path="/signin" exact render={() => <SignInComponent  setSignedIn={setSignedIn} liftingUpUserDetailsHandlerProp={liftingUpUserDetailsHandler} />} />
+          <Route path="/signin" exact render={() => <SignInComponent  setSignedIn={setSignedIn} />} />
           <Route path="/" exact render={() => <LandingPageComponent />} />
           <Route path="/turkishpumpkinlamps" exact render={() => <TurkishPumpkinLampsComponent />} />
           <Route path="/elephantcurvings" exact render={() => <ElephantCurvingsComponent />} />
