@@ -1,8 +1,12 @@
+/* I obtained the image below from unsplash : https://unsplash.com/photos/qixtBdqyNqI  */
 import RedBrownCeramicVasePicture from "../../images/muthengi-mbuvi-qixtBdqyNqI-unsplash.jpg";
 
+/* I created react component that will render one of my shop products. */
 const RedBrownCeramicVaseComponent = () => {
 
   return(
+    /* Below is the JSX for this shop product.
+    I have heavily relied on bootstrap to style my components */
     <div class="col">
       <div class="card">
         {/* I obtained this image from unsplash : https://unsplash.com/photos/qixtBdqyNqI */}

@@ -19,7 +19,7 @@ const MainComponent = ({ setSignedIn }) => {
   return(
     <>
       <main className="container-fluid">
-        {/* I then configured routing to the Landing page, Sign In Page and the three product pages.
+        {/* I then configured routing to the Landing page, Sign In Page Products, view & edit account and shop pages.
         I learnt to pass props in routed components from: https://github.com/remix-run/react-router/issues/4105#issuecomment-291834881 . */}
         <Switch>
           <Route path="/signin" exact render={() => <SignInComponent  setSignedIn={setSignedIn} />} />

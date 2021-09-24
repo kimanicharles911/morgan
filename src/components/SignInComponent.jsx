@@ -12,10 +12,13 @@ import "./SignInComponent.css";
 const SignInComponent = ({ setSignedIn }) => {
 
   /* I use the useForm hook and its methods for tracking the user input (i.e register), throwing validation errors and handling form submission.
-  I also created a variable that stores the useHistory hook that is then called by the onsubmit function to redirect to homepage if the login was successful.  */
+  I also created a variable that stores the useHistory hook that is then called by the onsubmit function to redirect to homepage if the login was successful.
+  When the form is submitted the signed in state set to true.
+  The form data is stored in the localStorage.
+  And the user is redirected to the homepage  */
   const { register, formState: { errors }, handleSubmit } = useForm();
   const history = useHistory();
-
+  
   const onSubmit = (data) => {
     setSignedIn(true);
     console.log(data);
