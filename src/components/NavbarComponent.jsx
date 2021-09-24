@@ -3,7 +3,6 @@ import acmeLogo from "../images/acme-logo.jpg";
 import githubAvatar from "../images/github_avatar.png";
 import { Navbar, Nav, Container, NavDropdown, Row, Button } from "react-bootstrap";
 import {LinkContainer} from 'react-router-bootstrap';
-
 const NavbarComponent = ({ signedIn, setSignedIn }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -11,22 +10,6 @@ const NavbarComponent = ({ signedIn, setSignedIn }) => {
   const [editProfileClicked, setEditProfileClicked] = useState(false);
   const [homeItemClicked, setHomeItemClicked] = useState(false);
   const [shopItemClicked, setShopItemClicked] = useState(false);
-
-  useEffect(() => {
-
-  }, [viewProfileClicked])
-
-  useEffect(() => {
-
-  }, [editProfileClicked])
-
-  useEffect(() => {
-
-  }, [homeItemClicked])
-
-  useEffect(() => {
-
-  }, [shopItemClicked])
 
   return(
     
