@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import acmeLogo from "../images/acme-logo.jpg";
 import githubAvatar from "../images/github_avatar.png";
 import { Navbar, Nav, Container, NavDropdown, Row, Button } from "react-bootstrap";
@@ -59,7 +59,7 @@ const NavbarComponent = ({ signedIn, setSignedIn }) => {
                               </LinkContainer>
                     : <li className="d-grid flex-shrink-0" style={{gridTemplateColumns: "1fr 2fr"}}>
                         {/* I obtained the below profile avatar image from: https://avatars.githubusercontent.com/u/7065836?v=4 */}
-                        <NavDropdown title={<img src={githubAvatar} alt="mdo" width="32" height="32" className="rounded-circle" />} >
+                        <NavDropdown title={(<img src={githubAvatar} alt="mdo" width="32" height="32" className="rounded-circle" />) }  >
                           <LinkContainer to="/account/profile/" onClick={() => setExpanded(false)}>
                             <Nav.Link href="/account/profile/"><NavDropdown.Item href="/account/profile/">Your Profile</NavDropdown.Item></Nav.Link>
                           </LinkContainer>

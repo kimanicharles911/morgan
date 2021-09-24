@@ -16,13 +16,6 @@ import {Switch, Route } from "react-router-dom";
 I then destructured the setSignedIn prop passed from the file App.js */
 const MainComponent = ({ setSignedIn }) => {
 
-  // const [userDetails, setUserDetails] = useState(JSON.parse(localStorage.getItem("userDetails")));
-  // console.log(`😜`, userDetails);
-
-  // useEffect(() => {
-  //   setUserDetails(JSON.parse(localStorage.getItem("userDetails")))
-  // }, [userDetails])
-
   return(
     <>
       <main className="container-fluid">
