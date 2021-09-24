@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
 import {  useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import {LinkContainer} from 'react-router-bootstrap';
 
 const EditAccountDetailsComponent = () => {
 
@@ -15,7 +13,6 @@ const EditAccountDetailsComponent = () => {
   const [userState, setUserState ] = useState(JSON.parse(localStorage.getItem("userDetails")).state === undefined ? "" : JSON.parse(localStorage.getItem("userDetails")).state);
   const [userAddress, setUserAddress ] = useState(JSON.parse(localStorage.getItem("userDetails")).address === undefined ? "" : JSON.parse(localStorage.getItem("userDetails")).address);
 
-  const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const history = useHistory();
 
   const submitHandler = (event) => {

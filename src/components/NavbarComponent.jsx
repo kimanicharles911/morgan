@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import acmeLogo from "../images/acme-logo.jpg";
 import githubAvatar from "../images/github_avatar.png";
 import { Navbar, Nav, Container, NavDropdown, Row, Button } from "react-bootstrap";
@@ -69,8 +69,8 @@ const NavbarComponent = ({ signedIn, setSignedIn }) => {
                           <LinkContainer to="/" onClick={() => setExpanded(false)}>
                             <Nav.Link href="/"><NavDropdown.Item href="#">Home</NavDropdown.Item></Nav.Link>
                           </LinkContainer>
-                          <LinkContainer to="/" onClick={() => setExpanded(false)}>
-                            <Nav.Link href="/"><NavDropdown.Item href="#">Shop</NavDropdown.Item></Nav.Link>
+                          <LinkContainer to="/shop/" onClick={() => setExpanded(false)}>
+                            <Nav.Link href="/shop/"><NavDropdown.Item href="/shop/">Shop</NavDropdown.Item></Nav.Link>
                           </LinkContainer>
                           {/* I learn to use two inline functions from: https://stackoverflow.com/a/26069299/9497346 */}
                           <LinkContainer to="/" onClick={() => { setExpanded(false); setSignedIn(false); localStorage.removeItem("userDetails"); }}>

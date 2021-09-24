@@ -2,7 +2,6 @@
 I imported the Switch and Route component from the react-router-dom library.
 I learnt to use react-router-dom from: https://youtu.be/Law7wfdg_ls .
 I learnt to pass props in routed components from: https://github.com/remix-run/react-router/issues/4105#issuecomment-291834881 */
-import { useState, useEffect } from "react";
 import SignInComponent from "./SignInComponent.jsx";
 import LandingPageComponent from "./LandingPageComponent.jsx"
 import TurkishPumpkinLampsComponent from "./products/TurkishPumpkinLampsComponent.jsx";
@@ -10,6 +9,7 @@ import ElephantCurvingsComponent from "./products/ElephantCurvingsComponent.jsx"
 import ChessPiecesComponent from "./products/ChessPiecesComponent.jsx";
 import ViewAccountDetailsComponent from "./user/ViewAccountDetailsComponent.jsx";
 import EditAccountDetailsComponent from "./user/EditAccountDetailsComponent.jsx";
+import ShopComponent from "./ShopComponent.jsx";
 import {Switch, Route } from "react-router-dom";
 
 /* I created a react component called ChessPiecesComponent.
@@ -29,6 +29,7 @@ const MainComponent = ({ setSignedIn }) => {
           <Route path="/chesspieces" exact render={() => <ChessPiecesComponent />} />
           <Route path="/account/profile" exact render={() => <ViewAccountDetailsComponent />} />
           <Route path="/account/edit" exact render={() => <EditAccountDetailsComponent />} />
+          <Route path="/shop" exact render={() => <ShopComponent />} />
         </Switch>
       </main>
     </>

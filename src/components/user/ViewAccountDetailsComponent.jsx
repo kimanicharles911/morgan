@@ -21,7 +21,7 @@ const ViewAccountDetailsComponent = () => {
           <div className="col-5">
             <div className="input-group has-validation">
               <span className="input-group-text" id="basic-addon2">Email</span>
-              <input type="email" value={userDetails !== null ? userDetails.email : null} className="form-control" placeholder={userDetails === null ? "You haven't added your email" : null} aria-describedby="basic-addon2" required />
+              <input type="email" value={userDetails !== null ? userDetails.email : null} className="form-control" placeholder={userDetails === null ? "You haven't added your email" : null} aria-describedby="basic-addon2" />
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@ const ViewAccountDetailsComponent = () => {
           <div className="col-5">
             <div className="input-group has-validation">
               <span className="input-group-text" id="basic-addon3">Password</span>
-              <input type="text" value={userDetails !== null ? userDetails.password : null} className="form-control" placeholder={userDetails === null ? "You haven't added your password" : null} aria-describedby="basic-addon3" required />
+              <input type="text" value={userDetails !== null ? userDetails.password : null} className="form-control" placeholder={userDetails === null ? "You haven't added your password" : null} aria-describedby="basic-addon3" />
             </div>
           </div>
         </div>
